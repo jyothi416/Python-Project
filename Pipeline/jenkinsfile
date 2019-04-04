@@ -1,0 +1,31 @@
+pipeline {
+ 	agent any 
+	Stages {
+  	     git ‘https://github.com/jyothi416/Jenkinsfile.git’
+
+                             }
+}
+Stage (‘Maven Build)
+		Steps {
+                                      sh ‘mvn package’
+}
+Stage (‘Quality check) {
+    Steps {
+                echo ‘code quality is running’
+               }
+}
+Stage (‘Publish Artifacts’){
+    Steps {
+                 echo ‘publish artifacts’
+                }
+}
+Stage (‘Deploy’) {
+  Steps {
+             echo ‘Deploying to test server’
+}
+}
+Stage (‘Testing’) {
+   Steps {
+               echo ‘Testing is going on’
+}
+
